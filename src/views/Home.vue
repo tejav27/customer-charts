@@ -1,6 +1,5 @@
 <template>
-  <v-card  class="mx-auto"
-    max-width="500">
+  <v-card class="mx-auto" max-width="500">
     <v-progress-linear v-if="loading" indeterminate></v-progress-linear>
     <v-card v-else>
       <v-card-title class="font-weight-bold text-h5">HOME</v-card-title>
@@ -9,7 +8,7 @@
           <v-col cols="50%">
             <v-card flat color="transparent">
               <v-card-title>ARR</v-card-title>
-              <v-card-text class="font-weight-bold">{{ totalArr }}</v-card-text>
+              <v-card-text class="font-weight-bold">$ {{ totalArr }} M</v-card-text>
             </v-card>
           </v-col>
           <v-col cols="50%">
@@ -68,6 +67,11 @@ export default {
         }
       }
     }
+  },
+  computed(){
+    // arrInMillions() {
+    //     return this.totalArr/1000000;
+    // }
   },
   async mounted() {
     try {
